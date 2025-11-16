@@ -8,7 +8,7 @@
   outputs = { self, nixpkgs }: {
     nixosConfigurations.shadow = nixpkgs.lib.nixosSystem {
       modules = [
-        ./configuration.nix
+        ./hosts/shadow/configuration.nix
       ];
     };
   };
