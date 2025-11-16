@@ -82,6 +82,13 @@
 
   programs.firefox.enable = true;
   programs.git.enable = true;
+  programs._1password.enable = true;
+  programs._1password-gui = {
+    enable = true;
+    polkitPolicyOwners = [ "jzeller" ];
+  };
+
+  nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
