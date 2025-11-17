@@ -9,6 +9,7 @@
     nixosConfigurations.shadow = nixpkgs.lib.nixosSystem {
       modules = [
         ./hosts/shadow/configuration.nix
+        ./modules/nvidia.nix
       ];
     };
   };
