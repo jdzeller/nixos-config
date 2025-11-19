@@ -23,6 +23,8 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
+  networking.networkmanager.plugins = with pkgs; [ networkmanager-openconnect ];
+
   # Set your time zone.
   time.timeZone = "America/Chicago";
 
@@ -45,7 +47,12 @@
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
   services.desktopManager.plasma6.enable = true;
-  
+ 
+  # Enable fingerprint reader
+  services.fprintd.enable = true; 
+
+  # Enable flatpak
+  services.flatpak.enable = true;
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -99,7 +106,6 @@
   environment.systemPackages = with pkgs; [
     # vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
-    google-chrome
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
