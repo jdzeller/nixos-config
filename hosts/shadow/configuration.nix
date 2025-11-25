@@ -97,6 +97,7 @@
   };
   programs.vscode.enable = true;
   programs.vim.enable = true;
+  programs.partition-manager.enable = true;
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.flake.setNixPath = true;
