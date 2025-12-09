@@ -10,6 +10,7 @@
       modules = [
         ./hosts/shadow/configuration.nix
         ./modules/nvidia.nix
+        ./modules/users.nix
       ];
     };
   };

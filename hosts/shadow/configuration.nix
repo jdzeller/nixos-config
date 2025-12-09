@@ -80,13 +80,6 @@
   #     tree
   #   ];
   # };
-  users.users.jzeller = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ];
-    packages = with pkgs; [
-      tree
-    ];
-  };
 
   programs.firefox.enable = true;
   programs.git.enable = true;
