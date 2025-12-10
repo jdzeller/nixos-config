@@ -11,6 +11,7 @@
         ./hosts/shadow/configuration.nix
         ./modules/nvidia.nix
         ./modules/users.nix
+        ./modules/plasma6.nix
       ];
     };
   };

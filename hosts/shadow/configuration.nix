@@ -42,11 +42,6 @@
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
-
-  # Enable SDDM and Plasma6
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
-  services.desktopManager.plasma6.enable = true;
  
   # Enable fingerprint reader
   services.fprintd.enable = true; 
