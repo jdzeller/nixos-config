@@ -84,8 +84,10 @@
     polkitPolicyOwners = [ "jzeller" ];
   };
   programs.vscode.enable = true;
-  programs.vim.enable = true;
+  programs.neovim.enable = true;
   programs.partition-manager.enable = true;
+  programs.htop.enable = true;
+  
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.flake.setNixPath = true;
