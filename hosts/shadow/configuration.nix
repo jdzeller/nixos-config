@@ -87,6 +87,8 @@
   programs.neovim.enable = true;
   programs.partition-manager.enable = true;
   programs.htop.enable = true;
+  programs.steam.enable = true;
+  programs.niri.enable = true;
   
 
   nixpkgs.config.allowUnfree = true;
