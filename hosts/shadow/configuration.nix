@@ -87,9 +87,7 @@
   programs.neovim.enable = true;
   programs.partition-manager.enable = true;
   programs.htop.enable = true;
-  programs.steam.enable = true;
-  programs.niri.enable = true;
-  
+  programs.steam.enable = true;  
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.flake.setNixPath = true;
@@ -100,6 +98,7 @@
     # vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     fastfetch
+    papirus-icon-theme
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
