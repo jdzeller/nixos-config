@@ -88,6 +88,7 @@
   programs.partition-manager.enable = true;
   programs.htop.enable = true;
   programs.steam.enable = true;  
+  programs.kdeconnect.enable = true;
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.flake.setNixPath = true;
