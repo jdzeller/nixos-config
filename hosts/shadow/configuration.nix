@@ -13,20 +13,11 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.timeout = 0;
-
-  # Enable Plymouth at boot
-  boot.plymouth.enable = true;
 
   networking.hostName = "shadow"; # Define your hostname.
-  # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
-  networking.networkmanager.plugins = with pkgs; [ networkmanager-openconnect ];
-
-  # Set your time zone.
-  time.timeZone = "America/Chicago";
+  # Configure network connections interactively with nmcli or nmtui.
+  networking.networkmanager.enable = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -45,9 +36,6 @@
  
   # Enable fingerprint reader
   services.fprintd.enable = true; 
-
-  # Enable flatpak
-  services.flatpak.enable = true;
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -76,31 +64,12 @@
   #   ];
   # };
 
-  programs.firefox.enable = true;
-  programs.git.enable = true;
-  programs._1password.enable = true;
-  programs._1password-gui = {
-    enable = true;
-    polkitPolicyOwners = [ "jzeller" ];
-  };
-  programs.vscode.enable = true;
-  programs.neovim.enable = true;
-  programs.partition-manager.enable = true;
-  programs.htop.enable = true;
-  programs.steam.enable = true;  
-  programs.kdeconnect.enable = true;
-
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.flake.setNixPath = true;
-
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
-  environment.systemPackages = with pkgs; [
-    # vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    fastfetch
-    papirus-icon-theme
-  ];
+  # environment.systemPackages = with pkgs; [
+  #   vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+  #   wget
+  # ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -126,9 +95,6 @@
   # accidentally delete configuration.nix.
   # system.copySystemConfiguration = true;
 
-  # Enable experimental features
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
   #
@@ -149,4 +115,3 @@
   system.stateVersion = "25.05"; # Did you read the comment?
 
 }
-
