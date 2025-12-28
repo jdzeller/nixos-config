@@ -4,6 +4,9 @@
   # Enable networkmanager openconnect 
   networking.networkmanager.plugins = with pkgs; [ networkmanager-openconnect ];
 
+  # Enable CUPS to print documents.
+  services.printing.enable = true;
+
   # Enable flatpak
   services.flatpak.enable = true;
 
