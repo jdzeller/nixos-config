@@ -4,8 +4,23 @@
   # Enable networkmanager openconnect 
   networking.networkmanager.plugins = with pkgs; [ networkmanager-openconnect ];
 
+  # Enable avahi
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  services.printing = {
+    enable = true;
+    drivers = with pkgs; [
+      gutenprint
+      gutenprintBin
+      brlaser
+      brgenml1lpr
+    ];
+  };
 
   # Enable flatpak
   services.flatpak.enable = true;
