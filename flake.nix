@@ -14,7 +14,6 @@
         ./modules/nvidia.nix
         ./modules/users.nix
         ./modules/plasma6.nix
-	./modules/cosmic.nix
       ];
     };
     nixosConfigurations.meerkat = nixpkgs.lib.nixosSystem {
