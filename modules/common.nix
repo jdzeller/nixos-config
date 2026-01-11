@@ -23,7 +23,7 @@
   nixpkgs.config.allowUnfree = true;
 
   programs.git.enable = true;
-  programs.neovim.enable = {
+  programs.neovim = {
     enable = true;
     defaultEditor = true;
     vimAlias = true;
