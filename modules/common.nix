@@ -23,7 +23,11 @@
   nixpkgs.config.allowUnfree = true;
 
   programs.git.enable = true;
-  programs.neovim.enable = true;
+  programs.neovim.enable = {
+    enable = true;
+    defaultEditor = true;
+    vimAlias = true;
+  };
   programs.htop.enable = true;
 
   environment.systemPackages = with pkgs; [
