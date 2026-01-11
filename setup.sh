@@ -9,20 +9,20 @@ DISK_SWAP="/dev/nvme0n1p3"
 HOST=""
 
 # Create GPT partition table
-parted ${DISK_SSD} -- mklabel gpt
+parted -s ${DISK_SSD} -- mklabel gpt
 # Create boot partition
-parted ${DISK_SSD} -- mkpart ESP fat32 1MB 512MB
+parted -s ${DISK_SSD} -- mkpart ESP fat32 1MB 512MB
 # Create root partition
-parted ${DISK_SSD} -- mkpart root ext4 512MB -8GB
+parted -s ${DISK_SSD} -- mkpart root ext4 512MB -8GB
 # Create swap partition
-parted ${DISK_SSD} -- mkpart swap linux-swap -8GB 100%
+parted -s ${DISK_SSD} -- mkpart swap linux-swap -8GB 100%
 # Set partition 1 as bootable
-parted ${DISK_SSD} -- set 1 esp on
+parted -s ${DISK_SSD} -- set 1 esp on
 
 # Create boot filesystem
 mkfs.fat -F 32 -n boot ${DISK_BOOT}
 # Create root filesystem
-mkfs.ext4 -L nixos ${DISK_NIXOS}
+mkfs.ext4 -L nixos ${DISK_NIXOS} -q
 # Create swap
 mkswap -L swap ${DISK_SWAP}
 
