@@ -23,6 +23,7 @@
         ./modules/common.nix
         ./modules/server.nix
         ./modules/users.nix
+	./modules/frigate.nix
       ];
     };
   };
