@@ -3,6 +3,6 @@
 {
   users.users.jzeller = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "docker" ];
   };
 }
