@@ -37,5 +37,6 @@
     fastfetch
     unzip
     zip
+    nmap
   ];
 }
